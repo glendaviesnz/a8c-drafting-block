@@ -2,9 +2,9 @@
 	"apiVersion": 2,
 	"name": "a8c/draft",
 	"title": "Draft Block",
-	"category": "widgets",
+	"category": "text",
 	"icon": "edit-page",
-	"description": "A block for drafting post or page content, which can later be converted to individual blocks for formatting",
+	"description": "A block for drafting post or page content, which can later be converted to individual blocks for more complex formatting",
 	"supports": {
 		"html": true
 	},
