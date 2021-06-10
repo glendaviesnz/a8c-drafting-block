@@ -6,7 +6,7 @@ import { BlockControls, RichText, useBlockProps } from '@wordpress/block-editor'
 
 import { createBlock } from '@wordpress/blocks';
 
-export default function DraftingBlockEdit({
+export default function DraftEdit({
 	attributes,
 	setAttributes,
 	mergeBlocks,

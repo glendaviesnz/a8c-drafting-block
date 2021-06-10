@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Drafting Block
+ * Plugin Name:       Draft Block
  * Description:       A block for drafting post or page content, which can later be converted to individual blocks for formatting.
  * Requires at least: 5.7
  * Requires PHP:      7.0
@@ -8,9 +8,9 @@
  * Author:            The WordPress Contributors
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       drafting-block
+ * Text Domain:       draft-block
  *
- * @package           a8c-drafting-block
+ * @package           a8c-draft-block
  */
 
 /**
@@ -18,7 +18,7 @@
  * Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
  */
-function a8c_drafting_block_block_init() {
+function a8c_draft_block_init() {
 	register_block_type_from_metadata( __DIR__ );
 }
-add_action( 'init', 'a8c_drafting_block_block_init' );
+add_action( 'init', 'a8c_draft_block_init' );
