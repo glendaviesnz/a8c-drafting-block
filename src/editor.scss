@@ -1,2 +1,10 @@
 .wp-block-a8c-draft {
+	.draft-label {
+		text-align: right;
+		font-size: 0.8rem;
+	}
+	.draft-content {
+		border: 1px dashed #cccccc;
+		padding: 8px;
+	}
 }

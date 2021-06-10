@@ -6,6 +6,7 @@ import { BlockControls, RichText, useBlockProps } from '@wordpress/block-editor'
 import { createBlock } from '@wordpress/blocks';
 
 import FinaliseContentButton from './finalise-content';
+import './editor.scss';
 
 export default function DraftEdit({
 	attributes,
@@ -28,7 +29,18 @@ export default function DraftEdit({
 				<FinaliseContentButton clientId={clientId} content={content} />
 			</BlockControls>
 			<section {...blockProps}>
+				<div className="draft-label">{__('Draft content: only visible to editors')}</div>
 				<RichText
+					className="draft-content"
+					allowedFormats={[
+						'core/bold',
+						'core/italic',
+						'core/link',
+						'core/superscript',
+						'core/subscript',
+						'core/strikethrough',
+						'core/text-color',
+					]}
 					identifier="value"
 					multiline
 					value={content}
