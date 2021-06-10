@@ -5,7 +5,7 @@ import { __ } from '@wordpress/i18n';
 import { BlockControls, RichText, useBlockProps } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
 
-import ConvertToBlocksButton from './convert-to-blocks';
+import FinaliseContentButton from './finalise-content';
 
 export default function DraftEdit({
 	attributes,
@@ -25,7 +25,7 @@ export default function DraftEdit({
 	return (
 		<>
 			<BlockControls group="block">
-				<ConvertToBlocksButton clientId={clientId} content={content} />
+				<FinaliseContentButton clientId={clientId} content={content} />
 			</BlockControls>
 			<section {...blockProps}>
 				<RichText

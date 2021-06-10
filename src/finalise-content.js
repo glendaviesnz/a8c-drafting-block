@@ -7,7 +7,7 @@ import { useDispatch, useSelect } from '@wordpress/data';
 import { rawHandler } from '@wordpress/blocks';
 import { store as blockEditorStore } from '@wordpress/block-editor';
 
-const ConvertToBlocksButton = ({ clientId, content }) => {
+const FinaliseContentButton = ({ clientId, content }) => {
 	const { replaceBlocks } = useDispatch(blockEditorStore);
 	const block = useSelect(
 		(select) => {
@@ -16,10 +16,14 @@ const ConvertToBlocksButton = ({ clientId, content }) => {
 		[clientId]
 	);
 	return (
-		<ToolbarButton onClick={() => replaceBlocks(block.clientId, rawHandler({ HTML: content }))}>
-			{__('Convert to blocks')}
+		<ToolbarButton
+			showTooltip
+			onClick={() => replaceBlocks(block.clientId, rawHandler({ HTML: content }))}
+			label={__('Convert the content to individual blocks for final formatting')}
+		>
+			{__('Finalise content')}
 		</ToolbarButton>
 	);
 };
 
-export default ConvertToBlocksButton;
+export default FinaliseContentButton;
