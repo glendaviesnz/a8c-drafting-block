@@ -13,16 +13,13 @@
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css",
 	"attributes": {
-		"value": {
+		"content": {
 			"type": "string",
 			"source": "html",
-			"selector": "blockquote",
+			"selector": "section",
 			"multiline": "p",
 			"default": "",
 			"__experimentalRole": "content"
-		},
-		"align": {
-			"type": "string"
 		}
 	}
 }

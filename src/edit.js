@@ -3,8 +3,9 @@
  */
 import { __ } from '@wordpress/i18n';
 import { BlockControls, RichText, useBlockProps } from '@wordpress/block-editor';
-
 import { createBlock } from '@wordpress/blocks';
+
+import ConvertToBlocksButton from './convert-to-blocks';
 
 export default function DraftEdit({
 	attributes,
@@ -13,8 +14,9 @@ export default function DraftEdit({
 	onReplace,
 	className,
 	mergedStyle,
+	clientId,
 }) {
-	const { value } = attributes;
+	const { content } = attributes;
 	const blockProps = useBlockProps({
 		className,
 		style: mergedStyle,
@@ -22,15 +24,17 @@ export default function DraftEdit({
 
 	return (
 		<>
-			<BlockControls group="block"></BlockControls>
-			<blockquote {...blockProps}>
+			<BlockControls group="block">
+				<ConvertToBlocksButton clientId={clientId} content={content} />
+			</BlockControls>
+			<section {...blockProps}>
 				<RichText
 					identifier="value"
 					multiline
-					value={value}
+					value={content}
 					onChange={(nextValue) =>
 						setAttributes({
-							value: nextValue,
+							content: nextValue,
 						})
 					}
 					onMerge={mergeBlocks}
@@ -39,7 +43,7 @@ export default function DraftEdit({
 					onReplace={onReplace}
 					__unstableOnSplitMiddle={() => createBlock('core/paragraph')}
 				/>
-			</blockquote>
+			</section>
 		</>
 	);
 }
