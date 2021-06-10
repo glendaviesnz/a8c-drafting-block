@@ -1,20 +1,10 @@
 /**
- * External dependencies
- */
-import classnames from "classnames";
-
-/**
  * WordPress dependencies
  */
-import { __ } from "@wordpress/i18n";
-import {
-	AlignmentControl,
-	BlockControls,
-	RichText,
-	useBlockProps,
-} from "@wordpress/block-editor";
+import { __ } from '@wordpress/i18n';
+import { BlockControls, RichText, useBlockProps } from '@wordpress/block-editor';
 
-import { createBlock } from "@wordpress/blocks";
+import { createBlock } from '@wordpress/blocks';
 
 export default function DraftingBlockEdit({
 	attributes,
@@ -24,24 +14,15 @@ export default function DraftingBlockEdit({
 	className,
 	mergedStyle,
 }) {
-	const { align, value } = attributes;
+	const { value } = attributes;
 	const blockProps = useBlockProps({
-		className: classnames(className, {
-			[`has-text-align-${align}`]: align,
-		}),
+		className,
 		style: mergedStyle,
 	});
 
 	return (
 		<>
-			<BlockControls group="block">
-				<AlignmentControl
-					value={align}
-					onChange={(nextAlign) => {
-						setAttributes({ align: nextAlign });
-					}}
-				/>
-			</BlockControls>
+			<BlockControls group="block"></BlockControls>
 			<blockquote {...blockProps}>
 				<RichText
 					identifier="value"
@@ -53,14 +34,10 @@ export default function DraftingBlockEdit({
 						})
 					}
 					onMerge={mergeBlocks}
-					aria-label={__("Start drafting")}
-					placeholder={
-						// translators: placeholder text used for the quote
-						__("Start drafting")
-					}
+					aria-label={__('Start drafting')}
+					placeholder={__('Start drafting')}
 					onReplace={onReplace}
-					__unstableOnSplitMiddle={() => createBlock("core/paragraph")}
-					textAlign={align}
+					__unstableOnSplitMiddle={() => createBlock('core/paragraph')}
 				/>
 			</blockquote>
 		</>

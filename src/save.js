@@ -1,22 +1,13 @@
 /**
- * External dependencies
- */
-import classnames from "classnames";
-
-/**
  * WordPress dependencies
  */
-import { RichText, useBlockProps } from "@wordpress/block-editor";
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
 	const { align, value } = attributes;
 
-	const className = classnames({
-		[`has-text-align-${align}`]: align,
-	});
-
 	return (
-		<blockquote {...useBlockProps.save({ className })}>
+		<blockquote {...useBlockProps.save()}>
 			<RichText.Content multiline value={value} />
 		</blockquote>
 	);
