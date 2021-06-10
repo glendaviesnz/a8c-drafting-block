@@ -1,0 +1,28 @@
+{
+	"apiVersion": 2,
+	"name": "a8c/drafting-block",
+	"title": "Drafting Block",
+	"category": "widgets",
+	"icon": "edit-page",
+	"description": "A block for drafting post or page content, which can later be converted to individual blocks for formatting",
+	"supports": {
+		"html": true
+	},
+	"textdomain": "drafting-block",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css",
+	"attributes": {
+		"value": {
+			"type": "string",
+			"source": "html",
+			"selector": "blockquote",
+			"multiline": "p",
+			"default": "",
+			"__experimentalRole": "content"
+		},
+		"align": {
+			"type": "string"
+		}
+	}
+}
