@@ -1,3 +1,7 @@
+# Repo moved
+
+**Update** This block has been moved to https://github.com/Automattic/block-experiments/, initial PR is at https://github.com/Automattic/block-experiments/pull/208
+
 ## Draft content editing block
 
 This is currently just an experimental block that allows easy drafting of post text content, which can then be converted to blocks for more complex formatting once the text is finalised.
